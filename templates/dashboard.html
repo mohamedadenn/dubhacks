@@ -87,13 +87,12 @@
           <div class="bootstrap_img_upload"></div>
         </div>
       </div>
-
+      
 <!-- Popular Post Output -->
       <div class="post mr-4">
         <div class="card">
           <div class="card-header">Most Popular Product:</div>
-          <img
-            src="../static/assets/images/phones.png"
+          <img src="{{path2}}"
             style="width: 500px; height: 500px"
             class="card-img-top"
             alt="..."
@@ -101,17 +100,19 @@
           <div class="card-body">
       <!-- CAPTION HERE -->
             <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{caption}}
             </p>
-         <!-- HASH TAGS HERE -->    
+            <p class="card-text">
+              {{caption}}
+            </p>
+         <!--    
             <p class="card-text">
               #likes #like #follow #likeforlikes #love #followforfollowback
               #instagood #instagram #followme #photooftheday #l #instalike
               #bhfyp #photography #likeforfollow #instadaily #likeforlike
               #followers #me #beautiful #picoftheday #f #myself #followback
               #smile #fashion #followforfollow #comment #likesforlikes #bhfyp
-            </p>
+            </p>-->
           </div>
         </div>
       </div>
@@ -119,57 +120,20 @@
 <!-- Top Keywords -->
       <div class="keywords mr-4">
         <div class="card">
-          <div class="card-header">Top 10 Hashtops:</div>
+          <div class="card-header">Top Hashtags:</div>
           <div class="card-body">
-            <button type="button" class="float-right btn btn-light mb-4">
-              Copy
-            </button>
+            
             <table class="table">
               <tbody>
+                {%for i in poplist2%} 
+  
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
+                  <th scope="row">⚫</th>
+                  <td>{{i}}</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                </tr>
+                {%endfor%} 
+                
+                
               </tbody>
             </table>
           </div>
@@ -181,11 +145,23 @@
         <div class="card">
           <div class="card-header">Trends:</div>
           <div class="card">
-      graph here
+              <img src="../static/output.png">
             </div>
           </div>
         </div>
       </div>
     </div>
+  
+    <script>
+      function myFunction() {
+        var toggleDiv = document.getElementById("toggleDiv");
+        if (toggleDiv.style.display === "none") {
+          toggleDiv.style.display = "block";
+        } else {
+          toggleDiv.style.display = "none";
+        }
+      }
+      </script>
+      
   </body>
 </html>
