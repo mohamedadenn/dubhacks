@@ -1,0 +1,262 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr 2.2fr auto auto auto auto;
+  grid-template-areas:
+    "navbar"
+    "banner "
+    "step1"
+    "step2"
+    "step3"
+    "footer";
+  min-height: 100%;
+}
+
+nav {
+  grid-area: navbar;
+  background-color: white;
+}
+.step1 {
+  grid-area: step1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "num1 num2 num3"
+    "data1 data2 data3";
+  margin: 10px;
+}
+.step1 h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 72px;
+}
+.step1 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.num1 {
+  grid-area: num1;
+}
+.num2 {
+  grid-area: num2;
+}
+.num3 {
+  grid-area: num3;
+}
+.data1 {
+  grid-area: data1;
+  border-bottom-color: coral;
+  border-bottom-style: solid;
+}
+.data2 {
+  grid-area: data2;
+  border-bottom-color: coral;
+  border-bottom-style: solid;
+}
+.data3 {
+  grid-area: data3;
+  border-bottom-color: coral;
+  border-bottom-style: solid;
+}
+
+.step2 {
+  grid-area: step2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "SP-1-img SP-1-data";
+
+}
+
+.SP-1-img {
+  grid-area: SP-1-img;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+.SP-1-data {
+  grid-area: SP-1-data;
+
+}
+
+.step3 {
+  grid-area: step3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "SP-1-img SP-1-data";
+}
+footer {
+  grid-area: footer;
+  background: rgb(230, 132, 195);
+}
+
+.insta-default {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 5px;
+  background-color: #e33e5c;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.insta-default:hover {
+  box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+  color: #fff;
+  font-size: 18px;
+}
+.banner {
+  grid-area: banner;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "banner banner-img";
+  overflow: hidden;
+  position: relative;
+}
+.banner-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(230, 132, 195);
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+.banner-img {
+  grid-area: banner-img;
+}
+.banner h2 {
+  font-size: 60px;
+}
+.banner h2,
+p,
+img,
+div {
+  position: relative;
+}
+h3 {
+  margin: 0;
+  font: 44px "Arial";
+}
+
+nav a {
+  color: black;
+}
+.three-steps div {
+  display: inline-block;
+}
+
+.card {
+  height: 100%;
+}
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-inner p,
+.hero h2 {
+  color: #fff;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero-button {
+  background: #fff;
+  color: #444;
+  border: 0;
+  padding: 1rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.hero-button.ghost {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.banner-img {
+  width: 37em;
+  height: auto;
+}
+
+.banner-tri {
+  width: 20em;
+  height: auto;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media (min-width: 700px) {
+  .hero-button {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 700px) {
+  .hero {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    padding: 6rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .banner-img {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .buttons {
+    display: grid;
+    /* Wide buttons */
+    grid-template-columns: 1fr 1fr;
+    /* Centered, narrow buttons */
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
