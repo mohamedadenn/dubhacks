@@ -32,8 +32,6 @@ nav {
   grid-template-areas:
     "num1 num2 num3"
     "data1 data2 data3";
-
- 
 }
 .step1 h1 {
   font-family: "Anton", sans-serif;
@@ -56,20 +54,19 @@ nav {
 }
 .data1 {
   grid-area: data1;
-height: auto;
-
+  height: auto;
+  text-align: center;
 }
 
 .data2 {
   grid-area: data2;
   height: auto;
-
+  text-align: center;
 }
 .data3 {
   grid-area: data3;
   height: auto;
-
-
+  text-align: center;
 }
 .highlight {
   font-family: "Anton", sans-serif;
@@ -82,7 +79,6 @@ height: auto;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: "SP-1-img SP-1-data";
-
 }
 
 .SP-1-img {
@@ -93,7 +89,6 @@ height: auto;
 }
 .SP-1-data {
   grid-area: SP-1-data;
-
 }
 
 .step3 {
@@ -208,7 +203,7 @@ h3 {
   margin-top: 1rem;
 }
 
-.hero-button.ghost {
+.hero-button.ghost {ß
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -226,8 +221,9 @@ h3 {
   right: 0px;
   bottom: 0px;
 }
-
-
+.my-auto {
+  text-align: center;
+}
 @media (min-width: 700px) {
   .hero-button {
     margin-top: 2rem;
