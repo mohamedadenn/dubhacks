@@ -123,6 +123,7 @@ footer {
   transition: all 0.3s;
   color: #fff;
   font-size: 18px;
+  text-decoration: none;
 }
 .banner {
   grid-area: banner;
