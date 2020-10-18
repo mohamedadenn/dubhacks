@@ -32,8 +32,8 @@ nav {
   grid-template-areas:
     "num1 num2 num3"
     "data1 data2 data3";
-  margin: 10px;
-  height: 844px;
+
+ 
 }
 .step1 h1 {
   font-family: "Anton", sans-serif;
@@ -56,19 +56,23 @@ nav {
 }
 .data1 {
   grid-area: data1;
-  border-bottom-color: coral;
-  border-bottom-style: solid;
-  display: ;
+height: auto;
+
 }
+
 .data2 {
   grid-area: data2;
-  border-bottom-color: coral;
-  border-bottom-style: solid;
+  height: auto;
+
 }
 .data3 {
   grid-area: data3;
-  border-bottom-color: coral;
-  border-bottom-style: solid;
+  height: auto;
+
+
+}
+.highlight {
+  font-family: "Anton", sans-serif;
 }
 
 .step2 {
@@ -94,15 +98,14 @@ nav {
 
 .step3 {
   grid-area: step3;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "SP-1-img SP-1-data";
+  background: rgb(230, 132, 195);
+}
+.step3 h1 {
+  font-size: 60px;
 }
 footer {
   grid-area: footer;
-  background: rgb(230, 132, 195);
+  background: white;
 }
 
 .insta-default {
@@ -223,6 +226,7 @@ h3 {
   right: 0px;
   bottom: 0px;
 }
+
 
 @media (min-width: 700px) {
   .hero-button {
