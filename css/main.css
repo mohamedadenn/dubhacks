@@ -21,6 +21,7 @@ body {
 nav {
   grid-area: navbar;
   background-color: white;
+  padding: 0;
 }
 .step1 {
   grid-area: step1;
@@ -32,12 +33,13 @@ nav {
     "num1 num2 num3"
     "data1 data2 data3";
   margin: 10px;
+  height: 844px;
 }
 .step1 h1 {
   font-family: "Anton", sans-serif;
   font-size: 72px;
 }
-.step1 div {
+.step1 .data {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +58,7 @@ nav {
   grid-area: data1;
   border-bottom-color: coral;
   border-bottom-style: solid;
+  display: ;
 }
 .data2 {
   grid-area: data2;
@@ -160,16 +163,10 @@ h3 {
   font: 44px "Arial";
 }
 
-nav a {
-  color: black;
-}
 .three-steps div {
   display: inline-block;
 }
 
-.card {
-  height: 100%;
-}
 .float-child {
   width: 50%;
   float: left;
