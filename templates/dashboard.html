@@ -26,30 +26,27 @@
   </head>
   <body>
     <div class="grid-container">
-    
       <!-- Sidebars -->
 
       <div class="sidebar mr-4">
         <div>
-
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="../templates/index.html">
             <img
               class="mb-2 center-block"
               src="../static/assets/images/logo-1.png"
               style="width: 200px; height: 100px"
           /></a>
         </div>
-<div>
-
-</div>
+        <div></div>
       </div>
 
-<!--  Input Form -->
+      <!--  Input Form -->
       <div class="input mt-4 mr-4">
         <form action="/inputform" method="post" enctype=multipart/form-data>
 
         <div class="form-group">
-          <label>Enter Instagram Username:</label
+          <label style="font-weight: bolder; color: white"
+            >Enter Instagram Username:</label
           ><input
             class="form-control item"
             type="text"
@@ -58,7 +55,8 @@
           />
         </div>
         <div class="form-group">
-          <label>Enter Instagram Password:</label
+          <label style="font-weight: bolder; color: white"
+            >Enter Instagram Password:</label
           ><input
             class="form-control item"
             type="text"
@@ -67,7 +65,8 @@
           />
         </div>
         <div class="form-group">
-          <label>Duration:</label
+          <label style="margin-bottom: 1em; font-weight: lighter"
+            >Duration:</label
           ><input
             class="form-control item"
             type="text"
@@ -76,6 +75,7 @@
           />
         </div>
         <input
+          style="margin-bottom: 1em; font-weight: lighter"
           type="file"
           name="files[]"
           multiple="true"
@@ -83,29 +83,46 @@
           required
         />
         <div class="form-group">
-          <button>Analyze</button>
+          <button
+            style="
+              background: rgb(230, 132, 195);
+              background: linear-gradient(
+                90deg,
+                rgba(230, 132, 195, 1) 13%,
+                rgba(247, 220, 105, 1) 50%
+              );
+              color: black;
+              font-weight: normal;
+              border-radius: 10em;
+              border-width: 1px;
+            "
+          >
+            Analyze
+          </button>
           <div class="bootstrap_img_upload"></div>
         </div>
       </div>
-      
-<!-- Popular Post Output -->
+
+      <!-- Popular Post Output -->
       <div class="post mr-4">
         <div class="card">
-          <div class="card-header">Most Popular Product:</div>
-          <img src="{{path2}}"
+          <div
+            class="card-header bg-info"
+            style="color: white; font-weight: bold"
+          >
+            Most Popular Product:
+          </div>
+          <img
+            src="{{path2}}"
             style="width: 500px; height: 500px"
             class="card-img-top"
             alt="..."
           />
           <div class="card-body">
-      <!-- CAPTION HERE -->
-            <p class="card-text">
-              {{caption}}
-            </p>
-            <p class="card-text">
-              {{caption}}
-            </p>
-         <!--    
+            <!-- CAPTION HERE -->
+            <p class="card-text">{{caption}}</p>
+            <p class="card-text">{{caption}}</p>
+            <!--    
             <p class="card-text">
               #likes #like #follow #likeforlikes #love #followforfollowback
               #instagood #instagram #followme #photooftheday #l #instalike
@@ -117,41 +134,50 @@
         </div>
       </div>
 
-<!-- Top Keywords -->
+      <!-- Top Keywords -->
       <div class="keywords mr-4">
         <div class="card">
-          <div class="card-header">Top Hashtags:</div>
+          <div
+            class="card-header bg-warning"
+            style="color: white; font-weight: bold"
+          >
+            Top Hashtags:
+          </div>
           <div class="card-body">
-            
+            <button type="button" class="float-right btn btn-light mb-4">
+              Copy
+            </button>
             <table class="table">
               <tbody>
-                {%for i in poplist2%} 
-  
+                {%for i in poplist2%}
+
                 <tr>
                   <th scope="row">⚫</th>
                   <td>{{i}}</td>
                 </tr>
-                {%endfor%} 
-                
-                
+                {%endfor%}
               </tbody>
             </table>
           </div>
         </div>
       </div>
 
-<!-- Graphs  -->
+      <!-- Graphs  -->
       <div class="graph mb-4 mr-4">
         <div class="card">
-          <div class="card-header">Trends:</div>
+          <div
+            class="card-header bg-danger"
+            style="color: white; font-weight: bold"
+          >
+            Trends:
+          </div>
           <div class="card">
-              <img src="../static/output.png">
-            </div>
+            <img src="../static/output.png" />
           </div>
         </div>
       </div>
     </div>
-  
+
     <script>
       function myFunction() {
         var toggleDiv = document.getElementById("toggleDiv");
@@ -161,7 +187,6 @@
           toggleDiv.style.display = "none";
         }
       }
-      </script>
-      
+    </script>
   </body>
 </html>
