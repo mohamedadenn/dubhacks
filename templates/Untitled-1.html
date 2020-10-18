@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Contact - Covid-19 Detection</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/Untitled%20design.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="http://geodata.solutions/includes/countrystatecity.js"></script>
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/Untitled%20design.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/Untitled%20design.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/Untitled%20design.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/img/Untitled%20design.png">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../static/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+</head>
+<body>
+    {% block body %}
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" style="background: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand logo" href="#" style="color: rgb(0,0,0);">Covid-19 Detection</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto"></ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page contact-page">
+        <section class="portfolio-block contact">
+            <div class="container">
+                <div class="heading">
+                    <h2 style="color: red;">{{ results }}</h2>
+                    <h2 style="color: red;">{{ result2 }}</h2>
+
+                    <h2>Please fill in the details for Covid detection</h2>
+                </div>
+                <form action="/inputform" method="post" enctype=multipart/form-data>
+                    <div class="form-group"><label>Did you travel in the past few days?</label><input class="form-control item" type="checkbox" value=1 id="name" name="travel" /></div>
+                    <div class="form-group"><label>Are you experiencing any tiredness or cough and cold?</label><input class="form-control item" type="checkbox" value=1 id="subject" name="commonsym"/></div>
+                    <div class="form-group"><label>Are you experiencing difficulty in breathing</label><input class="form-control item" type="checkbox" value=1 id="subject-1" name="majorsym"/></div>
+                    <div class="form-group"><label>Did you have any exposure to a Covid-19+ person?</label><input class="form-control item" type="checkbox" value=1 id="subject-2" name="exposure"/></div>
+                    <select name="country" class="countries" id="countryId">
+                        <option value="">Select Country</option>
+                    </select>
+                    <select name="state" class="states" id="stateId">
+                        <option value="">Select State</option>
+                    </select>
+                    <select name="city" class="cities" id="cityId">
+                        <option value="">Select City</option>
+                    </select>
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+                    <script src="//geodata.solutions/includes/countrystatecity.js"></script>
+
+
+                    <div class="form-group"><label>Upload</label><div class="bootstrap_img_upload">
+<div class="container py-5">
+
+    <header class="text-white text-center">
+        <h1 class="display-4">Please Upload your X-ray here</h1>
+    </header>
+
+
+    <div class="row py-4">
+        <div class="col-lg-6 mx-auto">
+
+            <!-- Upload image input-->
+            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" name="image" onchange="readURL(this);" class="form-control border-0">
+                <label id="upload-label" for="upload" class="font-weight-light text-muted"></label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4 float"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div>
+
+            <!-- Uploaded image area-->
+            <p class="font-italic text-white text-center">The image Uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+        </div>
+    </div>
+</div>
+</div></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block btn-lg" type="submit">Submit Form</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a href="#">Documentation</a></div>
+            <div class="social-icons"><a href="#"><i class="icon ion-social-instagram-outline"></i></a></div>
+        </div>
+    </footer>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="../static/js/script.min.js"></script>
+    {% endblock %}
+</body>
+</html>
