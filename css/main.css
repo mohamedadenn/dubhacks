@@ -41,6 +41,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
 
 .num1 {
@@ -54,7 +55,7 @@ nav {
 }
 .data1 {
   grid-area: data1;
-  height: auto;
+
   text-align: center;
 }
 
