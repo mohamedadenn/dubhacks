@@ -1,0 +1,134 @@
+@keyframes scaleUp {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes moveUp {
+	0% {
+		transform: 0;
+	}
+	100% {
+		transform: translateY(-300px);
+	}
+}
+
+.card {
+
+	$columnPadding: 1em/5;
+
+	padding: 1.6em 1.5em;
+	width: 100%;
+	max-width: 600px;
+	background: rgba(51, 56, 56, 1);
+	border-radius: 10px;
+	box-shadow: 0 2px 74px 0 rgba(0, 0, 0, .4);
+
+	&__header {
+		display: grid;
+		grid-gap: .3em;
+	}
+
+	&__headline {
+		margin: 0;
+		color: #fff;
+		font-size: 1.3em;
+		line-height: 1.2;
+	}
+
+	&__text {
+		margin: 0;
+		font-size: .9em;
+		line-height: 1;
+	}
+
+	&__chart {
+		position: relative;
+		display: flex;
+		padding-top: 4em;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	&__axis {
+		flex-shrink: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-self: stretch;
+		width: 100%;
+	}
+
+	&__row {
+		position: relative;
+		font-size: .7em;
+		min-width: 1px;
+		padding: .5em 0;
+		padding-right: .5em;
+		color: rgba(255, 255, 255, .6);
+
+		&--top {
+			transform: translateY(-100%);
+		}
+
+		&--middle {
+			transform: translateY(-50%);
+		}
+
+		&--bottom {
+			transform: translateY(0);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 1000px;
+			height: 1px;
+			background: rgba(255, 255, 255, .05);
+		}
+	}
+
+	&__column {
+		display: flex;
+		align-items: flex-end;
+		padding: 0 $columnPadding;
+		width: 100%;
+		transform-origin: bottom center;
+		animation: scaleUp 1s cubic-bezier(.51, .92, .24, 1);
+	}
+
+	&__bar {
+		position: relative;
+		width: 100%;
+		height: calc(28% + var(--index) * var(--index) * 2%);
+		background: rgba(110, 115, 115, 1);
+		color: rgba(40, 45, 45, 1);
+	}
+
+	&__column.active &__bar {
+		background: rgba(115, 250, 200, 1);
+	}
+
+	&__number {
+		$arrowWidth: 15px;
+		$arrowHeight: 10px;
+		$arrowGap: .5em;
+
+		position: absolute;
+		right: $columnPadding;
+		bottom: $arrowGap;
+		padding: .2em .5em calc(.2em + #{ $arrowHeight });
+		background: #fff;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - #{ $arrowWidth }) calc(100% - #{ $arrowHeight }), 0 calc(100% - #{ $arrowHeight }));
+		color: rgba(40, 45, 45, 1);
+		font-size: .8em;
+		animation: moveUp 1s cubic-bezier(.51, .92, .24, 1);
+		animation-fill-mode: forwards;
+	}
+
+}
